@@ -11,6 +11,7 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
+      meta: {layout: 'main'},
       component: Home
     },
     {
@@ -20,10 +21,46 @@ export default new Router({
       component: () => import('./views/Login.vue')
     },
     {
+      path: '/register',
+      name: 'register',
+      meta: {layout: 'auth'},
+      component: () => import('./views/Register.vue')
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      meta: {layout: 'main'},
+      component: () => import('./views/Profile.vue')
+    },
+    {
       path: '/categories',
       name: 'categories',
       meta: {layout: 'main'},
       component: () => import('./views/Categories.vue')
+    },
+    {
+      path: '/history',
+      name: 'history',
+      meta: {layout: 'main'},
+      component: () => import('./views/History.vue')
+    },
+    {
+      path: '/record',
+      name: 'record',
+      meta: {layout: 'main'},
+      component: () => import('./views/Record.vue')
+    },
+    {
+      path: '/planning',
+      name: 'planning',
+      meta: {layout: 'main'},
+      component: () => import('./views/Planning.vue')
+    },
+    {
+      path: '/history/detail-record',
+      name: 'detail record',
+      meta: {layout: 'main'},
+      component: () => import('./views/DetailRecord.vue')
     }
   ]
 })
