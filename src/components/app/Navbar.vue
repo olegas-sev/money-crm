@@ -16,7 +16,7 @@
             data-target="dropdown"
             ref="dropdown"
           >
-            USER NAME
+            {{ name }}
             <i class="material-icons right">arrow_drop_down</i>
           </a>
 
@@ -48,10 +48,15 @@ export default {
   }),
   methods: {
     logout() {
-      console.log("Fake logout");
+      this.$store.dispatch('logout')
       // Show user that you logged out with query
       this.$router.push("/login?message=logout");
     },
+  },
+  computed: {
+    name() {
+      return this.$store.getters.info.name
+    }
   },
   mounted() {
     this.interval = setInterval(() => {
