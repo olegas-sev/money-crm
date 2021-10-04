@@ -2,6 +2,30 @@ import firebase from "firebase/app"
 
 export default {
     actions: {
+        async fetchCategories({commit, dispatch}) {
+            try {
+                // Get user uid using vue dispatch 
+                const uid = await dispatch('getUid')
+                const categories = (await firebase.database().ref(`/users/${uid}/categories`).once('value')).val() || {}
+                
+                /*
+                const cats = []
+                Object.keys(categories).forEach(key => {
+                    cats.push({
+                        title: categories[key].title,
+                        limit: categories[key].limit,
+                        id: key
+                    })
+                })
+                return cats
+                */
+
+                return Object.keys(categories).map(key => ({...categories[key], id: key}))
+            } catch (e) {
+                commit('setError', e)
+                throw e
+            }
+        },
         async createCategory({commit, dispatch}, {title, limit}) {
             try {
                 // Get user uid using vue dispatch 

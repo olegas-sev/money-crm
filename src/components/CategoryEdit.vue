@@ -4,25 +4,54 @@
             <div class="page-subtitle">
                 <h4>Edit</h4>
             </div>
-
             <form>
                 <div class="input-field">
-                    <select>
-                        <option>Category</option>
+                    <select ref="select" v-model="current">
+                        <option
+                            v-for="c of categories"
+                            :key="c.id"
+                            :value="c.id"
+                            >{{ c.title }}</option
+                        >
                     </select>
                     <label>Choose Category</label>
                 </div>
 
                 <div class="input-field">
-                    <input type="text" id="name" />
+                    <input
+                        id="name"
+                        type="text"
+                        v-model="title"
+                        :class="{
+                            invalid: $v.title.$dirty && !$v.title.required,
+                        }"
+                    />
                     <label for="name">Title</label>
-                    <span class="helper-text invalid">TITLE</span>
+                    <span
+                        class="helper-text invalid"
+                        v-if="$v.title.$dirty && !$v.title.required"
+                        >Please enter the category</span
+                    >
                 </div>
 
                 <div class="input-field">
-                    <input id="limit" type="number" />
+                    <input
+                        id="limit"
+                        type="number"
+                        v-model.number="limit"
+                        :class="{
+                            invalid: $v.limit.$dirty && !$v.limit.minValue,
+                        }"
+                    />
                     <label for="limit">Limit</label>
-                    <span class="helper-text invalid">LIMIT</span>
+                    <span
+                        class="helper-text invalid"
+                        v-if="$v.limit.$dirty && !$v.limit.minValue"
+                    >
+                        Minimal value is
+                        {{ $v.limit.$params.minValue.min }} your current is
+                        {{ limit }}
+                    </span>
                 </div>
 
                 <button class="btn waves-effect waves-light" type="submit">
@@ -33,3 +62,47 @@
         </div>
     </div>
 </template>
+
+<script>
+import { required, minValue } from "vuelidate/lib/validators"
+
+export default {
+    props: {
+        categories: {
+            type: Array,
+            required: true,
+        },
+    },
+    data: () => ({
+        title: "",
+        limit: 50,
+        select: null,
+        current: null,
+    }),
+    watch: {
+        current(catId) {
+            console.log(catId);
+            this.categories.find(c => c.id === catId)
+        }
+    },
+    created() {
+        const {id, title, limit} = this.categories[0]
+        this.current = id
+        this.title = title
+        this.limit = limit
+    },
+    validations: {
+        title: { required },
+        limit: { minValue: minValue(50) },
+    },
+    mounted() {
+        this.select = M.FormSelect.init(this.$refs.select);
+        M.updateTextFields()
+    },
+    destroyed() {
+        if (this.select && this.select.destroy) {
+            this.select.destroy();
+        }
+    },
+};
+</script>
