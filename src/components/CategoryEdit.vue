@@ -4,7 +4,7 @@
             <div class="page-subtitle">
                 <h4>Edit</h4>
             </div>
-            <form>
+            <form @submit.prevent="submitHandler">
                 <div class="input-field">
                     <select ref="select" v-model="current">
                         <option
@@ -82,7 +82,9 @@ export default {
     watch: {
         current(catId) {
             console.log(catId);
-            this.categories.find(c => c.id === catId)
+            const {title, limit} = this.categories.find(c => c.id === catId)
+            this.title = title
+            this.limit = limit
         }
     },
     created() {
@@ -94,6 +96,26 @@ export default {
     validations: {
         title: { required },
         limit: { minValue: minValue(50) },
+    },
+    methods: {
+        async submitHandler() {
+            if (this.$v.$invalid) {
+                this.$v.$touch()
+                return
+            }
+
+            try {
+                const categoryData = {
+                    id: this.current,
+                    title: this.title,
+                    limit: this.limit,
+                }
+
+                await this.$store.dispatch('updateCategory', categoryData)
+                this.$message("Category was successfully updated.")
+                this.$emit('updated', categoryData)
+            } catch (e) {}
+        }
     },
     mounted() {
         this.select = M.FormSelect.init(this.$refs.select);

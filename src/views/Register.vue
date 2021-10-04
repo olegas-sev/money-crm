@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="submitHandler" class="card auth-card">
         <div class="card-content">
-            <span class="card-title">Домашняя бухгалтерия</span>
+            <span class="card-title">Dashboard register</span>
             <div class="input-field">
                 <input
                     id="email"
@@ -47,7 +47,7 @@
             <p>
                 <label>
                     <input type="checkbox" v-model="agree"/>
-                    <span>С правилами согласен</span>
+                    <span>I agree with Terms & Conditions</span>
                 </label>
             </p>
         </div>
@@ -57,14 +57,14 @@
                     class="btn waves-effect waves-light auth-submit"
                     type="submit"
                 >
-                    Зарегистрироваться
+                    Sign up
                     <i class="material-icons right">send</i>
                 </button>
             </div>
 
             <p class="center">
-                Уже есть аккаунт?
-                <router-link to="/login">Войти!</router-link>
+                Already have an account?
+                <router-link to="/login">Sing in!</router-link>
             </p>
         </div>
     </form>
