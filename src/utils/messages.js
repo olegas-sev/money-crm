@@ -1,4 +1,5 @@
 export default {
+    'login': 'Please sign in first.',
     'logout': 'You logged out of system',
     'auth/user-not-found': 'User with this email was not found',
     'auth/wrong-password': 'Wrong password was entered.',

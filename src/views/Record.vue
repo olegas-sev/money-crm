@@ -138,9 +138,6 @@ export default {
       } else {
         this.$message(`No enough money on your account (${this.amount - this.info.bill})`)
       }
-
-
-
     }
   },
   destroyed() {
