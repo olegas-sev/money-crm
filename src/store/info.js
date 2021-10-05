@@ -14,6 +14,18 @@ export default {
         }
     },
     actions: {
+        async updateInfo({dispatch, commit, getters}, toUpdate) {
+            try {
+                // Get uid of logged in user that we defined in auth store
+                const uid = await dispatch('getUid')
+                const updateData = {...getters.info, ...toUpdate}
+                await firebase.database().ref(`users/${uid}/info`).update(updateData)
+                commit('setInfo', updateData)
+            } catch (e) {
+                commit('setError', e)
+                throw e
+            }    
+        },
         async fetchInfo({ dispatch, commit }) {
             try {
                 // Get uid of logged in user that we defined in auth store
