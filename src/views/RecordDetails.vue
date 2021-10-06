@@ -2,16 +2,16 @@
   <div>
     <div>
       <div class="breadcrumb-wrap">
-        <a href="/history" class="breadcrumb">История</a>
-        <a class="breadcrumb"> Расход </a>
+        <router-link to="/history" class="breadcrumb">History</router-link>
+        <a class="breadcrumb"> Details </a>
       </div>
       <div class="row">
         <div class="col s12 m6">
           <div class="card red">
             <div class="card-content white-text">
-              <p>Описание:</p>
-              <p>Сумма:</p>
-              <p>Категория:</p>
+              <p>Description:</p>
+              <p>Amount:</p>
+              <p>Category:</p>
 
               <small>12.12.12</small>
             </div>

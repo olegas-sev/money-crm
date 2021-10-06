@@ -57,10 +57,10 @@ const router = new Router({
       component: () => import('./views/Planning.vue')
     },
     {
-      path: '/history/detail-record',
-      name: 'detail record',
+      path: '/history/details/:id',
+      name: 'detail',
       meta: {layout: 'main', auth: true},
-      component: () => import('./views/DetailRecord.vue')
+      component: () => import('./views/RecordDetails.vue')
     }
   ]
 })
