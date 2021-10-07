@@ -30,6 +30,8 @@
     "Tooltip_Over": "You are over with",
     "Tooltip_ThereIs": "there is",
     "Tooltip_Left": "left",
+    "Create_New_Record": "New Record",
+    "See_Full_Details": "See full details",
     "OutOf": "out of",
     "Update_Button": "Save",
     "Create": "Create",
@@ -39,7 +41,6 @@
     "Next": "Next",
     "Back": "Back",
     "Leave": "Leave",
-
 
 
     "Tooltip_New_Record": "New Record"

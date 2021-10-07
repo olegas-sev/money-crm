@@ -25,7 +25,7 @@
                 </td>
                 <td>
                     <button
-                    v-tooltip="'See full details'" 
+                    v-tooltip="'See_Full_Details'" 
                     class="btn-small btn" 
                     @click="$router.push('/history/details/' + record.id)">
                         <i class="material-icons">open_in_new</i>

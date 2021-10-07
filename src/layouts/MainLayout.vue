@@ -15,8 +15,9 @@
                 <router-link
                     class="btn-floating btn-large blue"
                     to="/record"
-                    v-tooltip="'New record'"
+                    v-tooltip="'Create_New_Record'"
                     data-position="left"
+                    :key="locale"
                 >
                     <i class="large material-icons">add</i>
                 </router-link>
