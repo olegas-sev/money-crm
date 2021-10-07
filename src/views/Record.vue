@@ -110,7 +110,6 @@ export default {
   },
   async mounted() {
     this.categories = await this.$store.dispatch('fetchCategories')
-    console.log('lol', this.categories)
     this.loading = false
 
     if (this.categories.length) {

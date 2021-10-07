@@ -92,7 +92,6 @@ export default {
               this.$router.push("/")
             } catch (e) {}
             // Form data
-            console.log(formData);
         },
     },
 }

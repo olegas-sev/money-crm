@@ -81,7 +81,6 @@ export default {
     }),
     watch: {
         current(catId) {
-            console.log(catId);
             const {title, limit} = this.categories.find(c => c.id === catId)
             this.title = title
             this.limit = limit

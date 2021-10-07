@@ -27,7 +27,7 @@
     "Choose_Category": "Выберите категорию",
     "Message_YourMin": "Минимальный лимит",
     "Message_YourCur": "а вы ввели",
-    "Tooltip_Excess": "Превышение на",
+    "Tooltip_More_Than": "Превышение на",
     "Tooltip_Stayed": "Осталось",
     "Create_New_Record": "Новая запись",
     "See_Full_Details": "Посмотреть запись",

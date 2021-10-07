@@ -15,8 +15,6 @@
     "Exchange_Rates": "Växlingskurs",
     "Currency": "Valuta",
     "Rate": "Kurs",
-    
-
     "Income": "Inkomst",
     "Outcome": "Utgift",
     "Name": "Namn",
@@ -28,9 +26,8 @@
     "Choose_Category": "Välj kategori",
     "Message_YourMin": "Den minimala limiten är",
     "Message_YourCur": "medans du angav",
-    "Tooltip_Over": "Du är över med",
-    "Tooltip_ThereIs": "Det finns",
-    "Tooltip_Left": "kvar",
+    "Tooltip_More_Than": "Över med",
+    "Tooltip_Stayed": "Kvar",
     "Create_New_Record": "Ny record",
     "See_Full_Details": "Se mer",
     "OutOf": "av",
@@ -44,9 +41,6 @@
     "Leave": "Lämna",
     "NOT_FOUND_RECORDS": "Inga records hittades, var vänlig lägg till en",
     "NOT_FOUND_CATEGORIES": "Inga kategorier hittades, var vänlig lägg till en",
-
     "Here" : "här",
-
-
     "Tooltip_New_Record": "Ny Record"
 }

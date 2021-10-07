@@ -87,6 +87,7 @@ export default {
           locale: this.locale
         })
       } catch (e) {}
+      this.$message('Changes have been saved.')
     }
   },
   destroyed() {
