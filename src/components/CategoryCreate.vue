@@ -2,7 +2,7 @@
     <div class="col s12 m6">
         <div>
             <div class="page-subtitle">
-                <h4>Create</h4>
+                <h4>{{'Create' | localize}}</h4>
             </div>
 
             <form @submit.prevent="submitHandler">
@@ -15,11 +15,11 @@
                             invalid: $v.title.$dirty && !$v.title.required,
                         }"
                     />
-                    <label for="name">Title</label>
-                    <span
+                    <label for="name">{{"Category" | localize}}</label>
+                    <span 
                         class="helper-text invalid"
                         v-if="$v.title.$dirty && !$v.title.required"
-                        >Please enter the category</span
+                        >{{'Message_Category' | localize}}</span
                     >
                 </div>
 
@@ -32,19 +32,19 @@
                             invalid: $v.limit.$dirty && !$v.limit.minValue,
                         }"
                     />
-                    <label for="limit">Limit</label>
+                    <label for="limit">{{'Limit' | localize}}</label>
                     <span
                         class="helper-text invalid"
                         v-if="$v.limit.$dirty && !$v.limit.minValue"
                     >
-                        Minimal value is
-                        {{ $v.limit.$params.minValue.min }} your current is
+                        {{'Message_YourMin' | localize}}
+                        {{ $v.limit.$params.minValue.min }} {{"Message_YourCur" | localize}}
                         {{ limit }}
                     </span>
                 </div>
 
                 <button class="btn waves-effect waves-light" type="submit">
-                    Create
+                    {{'Create' | localize}}
                     <i class="material-icons right">send</i>
                 </button>
             </form>

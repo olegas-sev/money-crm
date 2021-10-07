@@ -50,7 +50,7 @@
             </div>
 
             <p class="center">
-                No account??
+                No account?
                 <router-link to="/register">Register</router-link>
             </p>
         </div>

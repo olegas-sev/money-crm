@@ -2,7 +2,7 @@
   <div class="col s12 m6 l4">
     <div class="card light-blue bill-card">
       <div class="card-content white-text">
-        <span class="card-title">Balance in currencies</span>
+        <span class="card-title">{{'Balance_In_Currencies' | localize}}</span>
 
         <p 
           v-for="cur of currencies"

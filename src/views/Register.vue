@@ -64,7 +64,7 @@
 
             <p class="center">
                 Already have an account?
-                <router-link to="/login">Sing in!</router-link>
+                <router-link to="/login">Sing in</router-link>
             </p>
         </div>
     </form>

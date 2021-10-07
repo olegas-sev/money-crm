@@ -2,7 +2,7 @@
     <div class="col s12 m6">
         <div>
             <div class="page-subtitle">
-                <h4>Edit</h4>
+                <h4>{{'Edit' | localize}}</h4>
             </div>
             <form @submit.prevent="submitHandler">
                 <div class="input-field">
@@ -14,7 +14,7 @@
                             >{{ c.title }}</option
                         >
                     </select>
-                    <label>Choose Category</label>
+                    <label>{{'Choose_Category' | localize}}</label>
                 </div>
 
                 <div class="input-field">
@@ -30,7 +30,7 @@
                     <span
                         class="helper-text invalid"
                         v-if="$v.title.$dirty && !$v.title.required"
-                        >Please enter the category</span
+                        >{{'Title_Category' | localize}}</span
                     >
                 </div>
 
@@ -43,19 +43,19 @@
                             invalid: $v.limit.$dirty && !$v.limit.minValue,
                         }"
                     />
-                    <label for="limit">Limit</label>
+                    <label for="limit">{{'Limit' | localize}}</label>
                     <span
                         class="helper-text invalid"
                         v-if="$v.limit.$dirty && !$v.limit.minValue"
                     >
-                        Minimal value is
-                        {{ $v.limit.$params.minValue.min }} your current is
+                        {{'Message_YourMin' | localize}}
+                        {{ $v.limit.$params.minValue.min }} {{'Message_YourCur' | localize}}
                         {{ limit }}
                     </span>
                 </div>
 
                 <button class="btn waves-effect waves-light" type="submit">
-                    Update
+                    {{'Update_Button' | localize}}
                     <i class="material-icons right">send</i>
                 </button>
             </form>

@@ -20,9 +20,9 @@
                         class="card"
                     >
                         <div class="card-content white-text">
-                            <p>Description: {{ record.description }}</p>
-                            <p>Amount: {{ record.amount | currency }}</p>
-                            <p>Category: {{ record.categoryName }}</p>
+                            <p>{{'Description' | localize}}: {{ record.description }}</p>
+                            <p>{{'Amount' | localize}}: {{ record.amount | currency }}</p>
+                            <p>{{'Category' | localize}}: {{ record.categoryName }}</p>
 
                             <small>{{ record.date | date("datetime") }}</small>
                         </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>New record</h3>
+      <h3>{{'Menu_Create_Record' | localize}}</h3>
     </div>
 
     <Loader v-if="loading"/>
@@ -12,20 +12,20 @@
           <option v-for="c in categories" :key="c.id"
           :value="c.id">{{c.title}}</option>
         </select>
-        <label>Choose a category</label>
+        <label>{{'Choose_Category' | localize}}</label>
       </div>
 
       <p>
         <label>
           <input class="with-gap" name="type" type="radio" value="income" v-model="type" />
-          <span>Income</span>
+          <span>{{'Income' | localize}}</span>
         </label>
       </p>
 
       <p>
         <label>
           <input class="with-gap" name="type" type="radio" value="outcome" v-model="type" />
-          <span>Outcome</span>
+          <span>{{'Outcome' | localize}}</span>
         </label>
       </p>
 
@@ -35,12 +35,12 @@
         type="number" 
         v-model.number="amount" 
         :class="{invalid: $v.amount.$dirty && !$v.amount.minValue}"/>
-        <label for="amount">Amount</label>
+        <label for="amount">{{'Amount' | localize}}</label>
         <span
         class="helper-text invalid"
         v-if="$v.amount.$dirty && !$v.amount.minValue"
         >
-        Please enter the amount you want of {{type}}
+        {{'Message_YourMin' | localize}} {{$v.amount.$params.minValue.min}} {{'Message_YourCur' | localize}} {{amount}} 
         </span>
       </div>
 
@@ -50,17 +50,17 @@
         type="text" 
         v-model="description"
         :class="{invalid: $v.description.$dirty && !$v.description.required}"/>
-        <label for="description">Description</label>
+        <label for="description">{{'Description' | localize}}</label>
         <span
         class="helper-text invalid"
         v-if="$v.description.$dirty && !$v.description.required"
         >
-        Please enter the description
+        {{'Message_Description' | localize}}
         </span>
       </div>
 
       <button class="btn waves-effect waves-light" type="submit">
-        Create
+        {{'Create' | localize}}
         <i class="material-icons right">send</i>
       </button>
     </form>
@@ -104,7 +104,7 @@ export default {
   computed: {
     ...mapGetters(['info']),
     canCreateRecord() {
-      if (this.typ === 'income') {
+      if (this.type === 'income') {
         return true
       }
       return this.info.bill >= this.amount

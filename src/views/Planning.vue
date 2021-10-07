@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-title">
-      <h3>Planning</h3>
+      <h3>{{'Menu_Planning' | localize}}</h3>
       <h4>{{info.bill | currency('SEK')}}</h4>
     </div>
     <Loader v-if="loading"/>
@@ -10,7 +10,7 @@
       <div v-for="cat of categories" :key="cat.id">
         <p>
           <strong>{{ cat.title }}:</strong>
-          {{ cat.spend | currency}} out of {{ cat.limit | currency}}
+          {{ cat.spend | currency}} {{'OutOf' | localize}} {{ cat.limit | currency}}
         </p>
         <div class="progress" v-tooltip="cat.tooltip">
           <div 
@@ -26,6 +26,7 @@
 <script>
 import {mapGetters} from 'vuex'
 import currencyFilter from '@/filters/currency.filter'
+import localizeFilter from '@/filters/localize.filter'
 
 export default {
   name: 'planning',
@@ -53,7 +54,7 @@ export default {
       : percent < 100 ? 'yellow' : 'red'
 
       const tooltipValue = cat.limit - spend
-      const tooltip = `${tooltipValue < 0 ? `You are over with ${currencyFilter(Math.abs(tooltipValue))}` : `There is ${currencyFilter(Math.abs(tooltipValue))} left`}`
+      const tooltip = `${tooltipValue < 0 ? `${localizeFilter('Tooltip_Over')} ${currencyFilter(Math.abs(tooltipValue))}` : `${localizeFilter('Tooltip_ThereIs')} ${currencyFilter(Math.abs(tooltipValue))} ${localizeFilter('Tooltip_Left')}`}`
       return {
         ...cat, 
         progressPercent,
