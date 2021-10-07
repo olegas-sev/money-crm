@@ -27,9 +27,8 @@
     "Choose_Category": "Choose a category",
     "Message_YourMin": "Your minimum is",
     "Message_YourCur": "your current is",
-    "Tooltip_Over": "You are over with",
-    "Tooltip_ThereIs": "there is",
-    "Tooltip_Left": "left",
+    "Tooltip_More_Than": "Excess on",
+    "Tooltip_Stayed": "Left",
     "Create_New_Record": "New Record",
     "See_Full_Details": "See full details",
     "OutOf": "out of",
@@ -41,6 +40,9 @@
     "Next": "Next",
     "Back": "Back",
     "Leave": "Leave",
+    "NOT_FOUND_RECORDS": "No records were found, please make one",
+    "NOT_FOUND_CATEGORIES": "No categories were found, please make one",
+    "Here" : "här",
 
 
     "Tooltip_New_Record": "New Record"

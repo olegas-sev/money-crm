@@ -12,7 +12,7 @@
         :categories="categories" 
         :key="categories.length + updateCount" 
         @updated="updateCategories"/> 
-        <p v-else class="center">No categories were found.</p>
+        <p v-else class="center">{{'NOT_FOUND_CATEGORIES' | localize}}.</p>
       </div>
     </section>
   </div>

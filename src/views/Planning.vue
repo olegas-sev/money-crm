@@ -5,7 +5,9 @@
       <h4>{{info.bill | currency('SEK')}}</h4>
     </div>
     <Loader v-if="loading"/>
-    <p class="center" v-else-if="!categories.length" >No records were found. Please <router-link to="/record">add one</router-link>.</p>
+    <p class="center" v-else-if="!categories.length" >
+      {{'NOT_FOUND_CATEGORIES' | localize}}
+      <router-link to="/categories">{{'Here' | localize}}</router-link>.</p>
     <section v-else>
       <div v-for="cat of categories" :key="cat.id">
         <p>
@@ -54,7 +56,11 @@ export default {
       : percent < 100 ? 'yellow' : 'red'
 
       const tooltipValue = cat.limit - spend
-      const tooltip = `${tooltipValue < 0 ? `${localizeFilter('Tooltip_Over')} ${currencyFilter(Math.abs(tooltipValue))}` : `${localizeFilter('Tooltip_ThereIs')} ${currencyFilter(Math.abs(tooltipValue))} ${localizeFilter('Tooltip_Left')}`}`
+           const tooltip = `${
+        tooltipValue < 0 ? localizeFilter('Tooltip_More_Than') : localizeFilter('Tooltip_Stayed')
+      } ${currencyFilter(Math.abs(tooltipValue))}`
+
+
       return {
         ...cat, 
         progressPercent,

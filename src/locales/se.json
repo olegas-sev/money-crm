@@ -42,6 +42,10 @@
     "Next": "Nästa",
     "Back": "Föregående",
     "Leave": "Lämna",
+    "NOT_FOUND_RECORDS": "Inga records hittades, var vänlig lägg till en",
+    "NOT_FOUND_CATEGORIES": "Inga kategorier hittades, var vänlig lägg till en",
+
+    "Here" : "här",
 
 
     "Tooltip_New_Record": "Ny Record"

@@ -27,9 +27,8 @@
     "Choose_Category": "Выберите категорию",
     "Message_YourMin": "Минимальный лимит",
     "Message_YourCur": "а вы ввели",
-    "Tooltip_Over": "Вы переплатили",
-    "Tooltip_ThereIs": "У вас осталось",
-    "Tooltip_Left": " ",
+    "Tooltip_Excess": "Превышение на",
+    "Tooltip_Stayed": "Осталось",
     "Create_New_Record": "Новая запись",
     "See_Full_Details": "Посмотреть запись",
     "OutOf": "из",
@@ -41,7 +40,9 @@
     "Next": "Дальше",
     "Back": "Назад",
     "Leave": "Выйти",
-
+    "NOT_FOUND_RECORDS": "Не возможно было найти записи, добавьте их",
+    "NOT_FOUND_CATEGORIES": "Категории были не найдены, добавьте их",
+    "Here" : "тут",
 
 
     "Tooltip_New_Record": "Новая запись"

@@ -11,8 +11,8 @@
         <Loader v-if="loading" />
 
         <p class="center" v-else-if="!records.length">
-            No records were found. But you can create one
-            <router-link to="/record">here</router-link>
+            {{'NOT_FOUND_RECORDS' | localize}}
+            <router-link to="/record">{{'Here' | localize}}</router-link>.
         </p>
 
         <section v-else>
