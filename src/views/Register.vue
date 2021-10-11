@@ -41,7 +41,7 @@
             </div>
             <div class="input-field">
                 <input id="name" type="text" v-model.trim="name" :class="{invalid: $v.name.$dirty && !$v.name.required}" />
-                <label for="name">Имя</label>
+                <label for="name">Name</label>
                 <small class="helper-text invalid" v-if="$v.name.$dirty && !$v.name.required">Please enter the name.</small>
             </div>
             <p>
