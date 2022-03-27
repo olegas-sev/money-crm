@@ -6,16 +6,17 @@
 
 ---
 
-## Structure
+## /src Structure
 
-| Codebase                                                       |        Description        |
-| :------------------------------------------------------------- | :-----------------------: |
-| [directives](directives), [mixins](mixins), [filters](filters) | Reusability & Composition |
-| [locales](locales)                                             |      Supported langs      |
-| [views](views)                                                 |       Pages / Views       |
-| [components](components)                                       |        Components         |
-| [layouts](layouts)                                             |          Layouts          |
-| [utils](utils)                                                 |         Utilities         |
+| Codebase                                                                   |        Description        |
+| :------------------------------------------------------------------------- | :-----------------------: |
+| [directives](src/directives), [mixins](src/mixins), [filters](src/filters) | Reusability & Composition |
+| [locales](src/locales)                                                     |      Supported langs      |
+| [views](src/views)                                                         |       Pages / Views       |
+| [components](src/components)                                               |        Components         |
+| [layouts](src/layouts)                                                     |          Layouts          |
+| [store](src/store)                                                         |      Sate management      |
+| [utils](src/utils)                                                         |         Utilities         |
 
 ## Technologies used
 
