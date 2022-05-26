@@ -1,6 +1,8 @@
 {
   "name": "money-crm",
   "version": "0.1.0",
+  "description": "Money management system",
+  "author": "Olegas Sevcenko",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
