@@ -4,6 +4,11 @@
   <strong>A way to take care of your money 📈</strong>
 </p>
 
+<div align="center">
+  <img  src="./public/img/logos/Money-CRM-logos.jpeg">
+
+</div>
+
 ---
 
 ## /src Structure
