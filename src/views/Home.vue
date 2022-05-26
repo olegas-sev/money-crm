@@ -10,7 +10,7 @@
 
     <Loader v-if="loading" />
 
-    <div v-if="!currency" class="row">
+    <div v-if="isProd" class="row">
       <p>
         <a href="https://fixer.io/" target="_blank">Fixer API</a> does not allow
         use of their API for production projects, therefore you can not really
@@ -21,7 +21,7 @@
         since they are not related to Fixer API :).
       </p>
     </div>
-    <div class="row">
+    <div v-else class="row">
       <HomeBill :rates="currency.rates" />
 
       <HomeCurrency :rates="currency.rates" :date="currency.date" />
@@ -37,7 +37,8 @@ export default {
   name: 'home',
   data: () => ({
     loading: true,
-    currency: null
+    currency: null,
+    isProd: process.env.NODE_ENV !== 'development'
   }),
   async mounted() {
     this.currency = await this.$store.dispatch('fetchCurrency')
